@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "appDiabetes",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,27 @@
+.alert-wrapper {
+     
+    .alert-title {
+      text-align: center;
+    }
+    .alert-sub-title {
+      text-align: center;
+    }
+  
+    .alert-message {
+      text-align: center;
+    }
+  
+    .alert-button-inner {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+  
+  }
+
+  ion-icon {
+    font-size: 64px;
+    display:inline-block;
+    width:100%;
+    font-weight:bold;
+  }

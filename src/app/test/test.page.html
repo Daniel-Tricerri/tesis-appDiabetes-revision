@@ -1,0 +1,193 @@
+<ion-header >
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary"><strong>TEST FINDRISC</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="light">
+  
+  <ion-list *ngFor="let pregunta of cuestionario; index as i">
+    <ion-card color="light">
+      <ion-card-header >
+        <ion-card-title>{{pregunta.pregunta}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content [ngSwitch]="i">
+        <ion-item *ngSwitchCase="0">
+            <ion-list>
+              <ion-radio-group (ionChange)="genero_($event)" value="genero">
+                <ion-item>
+                  <ion-label>Masculino</ion-label>
+                  <ion-radio (click)= "cambiarGenero('m')" value="Masculino" slot="start"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Femenino</ion-label>
+                  <ion-radio (click)= "cambiarGenero('f')" value="Femenino" slot="start"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+        </ion-item>
+        <ion-item *ngSwitchCase="1">
+          <ion-list>
+            <ion-radio-group  (ionChange)="edad_($event)" value="edad">
+              <ion-item>
+                <ion-label>Menos de 45 años</ion-label>
+                <ion-radio value="Menos de 45 años" slot="start"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Entre 45 y 54 años</ion-label>
+                <ion-radio value="Entre 45 y 54 años" slot="start"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Entre 55 y 64 años</ion-label>
+                <ion-radio value="Entre 55 y 64 años" slot="start"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Más de 64 años</ion-label>
+                <ion-radio value="Más de 64 años" slot="start"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-item>
+        <ion-item *ngSwitchCase="2">
+          <ion-list>
+            <ion-label>Peso en kg [ej: 67]:</ion-label>
+            <ion-input (ionChange)="imc_peso($event)" type="number" placeholder="Ingrese su peso actual" ></ion-input>
+            <ion-label>Estatura [ej: 1.73]:</ion-label>
+            <ion-input (ionChange)="imc_altura($event)" type="number" placeholder="Ingrese su estatura actual" ></ion-input>
+          </ion-list>
+        </ion-item>
+        <ion-item *ngSwitchCase="3">
+          <ion-list *ngIf="genero">
+            <ion-radio-group (ionChange)="cintura_($event)" name="auto" value="tesla">
+              <ion-item>
+                <ion-label>Menos de 94 cm</ion-label>
+                <ion-radio value="Menos de 94 cm" slot="start"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Entre 94-102 cm</ion-label>
+                <ion-radio value="Entre 94-102 cm" slot="start"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Más 102 cm</ion-label>
+                <ion-radio value="Más 102 cm" slot="start"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+          <ion-list *ngIf="!genero">
+            <ion-radio-group (ionChange)="cintura_($event)" name="auto" value="tesla">
+              <ion-item>
+                <ion-label>Menos de 80 cm</ion-label>
+                <ion-radio value="Menos de 80 cm" slot="start"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Entre 80-88 cm</ion-label>
+                <ion-radio value="Entre 80-88 cm" slot="start"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>Más 88 cm</ion-label>
+                <ion-radio value="Más 88 cm" slot="start"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-item>
+        <ion-item *ngSwitchCase="4">
+          <ion-list>
+            <ion-list>
+              <ion-radio-group (ionChange)="actividad_($event)" name="auto" value="tesla">
+                <ion-item>
+                  <ion-label>Si</ion-label>
+                  <ion-radio value="Si" slot="start"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio value="No" slot="start"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-list>
+        </ion-item>
+        <ion-item *ngSwitchCase="5">
+          <ion-list>
+            <ion-list>
+              <ion-radio-group (ionChange)="frutas_($event)" name="auto" value="tesla">
+                <ion-item>
+                  <ion-label>Todos los dias</ion-label>
+                  <ion-radio value="Todos los dias" slot="start"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No todos los dias</ion-label>
+                  <ion-radio value="No todos los dias" slot="start"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-list>
+        </ion-item>
+        <ion-item *ngSwitchCase="6">
+          <ion-list>
+            <ion-list>
+              <ion-radio-group (ionChange)="hiper_($event)" name="auto" value="tesla">
+                <ion-item>
+                  <ion-label>Si</ion-label>
+                  <ion-radio value="Si" slot="start"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio value="No" slot="start"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-list>
+        </ion-item>
+        <ion-item *ngSwitchCase="7">
+          <ion-list>
+            <ion-list>
+              <ion-radio-group (ionChange)="glucosa_($event)" name="auto" value="tesla">
+                <ion-item>
+                  <ion-label>Si</ion-label>
+                  <ion-radio value="Si" slot="start"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio value="No" slot="start"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-list>
+        </ion-item>
+        <ion-item *ngSwitchCase="8">
+          <ion-list>
+            <ion-list>
+              <ion-radio-group (ionChange)="diabetes_($event)" name="auto" value="tesla">
+                <ion-item>
+                  <ion-label>No</ion-label>
+                  <ion-radio value="No" slot="start"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Si: abuelos, tios, primos</ion-label>
+                  <ion-radio value="Si: abuelos, tios, primos" slot="start"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Si: padres, hermanos o hijos</ion-label>
+                  <ion-radio value="Si: padres, hermanos o hijos" slot="start"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </ion-list>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list>
+    <ion-button (click)="registrar()" expand="block" color="success">
+      Registrar y finalizar
+    </ion-button>
+    <br>
+    <ion-button routerLink="../tabs" expand="block" color="danger">
+      Cancelar
+    </ion-button>
+    
+  </ion-list>
+</ion-content>

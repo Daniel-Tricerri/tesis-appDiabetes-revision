@@ -1,5 +1,8 @@
 {
   "name": "appDiabetes",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

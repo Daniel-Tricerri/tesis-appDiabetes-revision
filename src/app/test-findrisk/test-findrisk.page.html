@@ -1,0 +1,30 @@
+<ion-header [translucent]="true" type="ios">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first" color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title color="primary">
+      <strong>TEST FINDRISC</strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" type="ios" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-icon name="reader-outline" color="dark"></ion-icon>
+  <ion-text color="primary" align="center">
+    <h1>Bienvenid@ {{nombre}}, primero necesitamos que nos ayudes respondiendo unas cuantas preguntas del test de findrisk.</h1>
+  </ion-text>
+  <br>
+  
+  <ion-text color="dark" align="center">
+    <h3>El test de Findrisc es una herramienta que mediante un cuestionario permite evaluar el riesgo de una persona de desarrollar diabetes mellitus tipo 2 en los próximos 10 años.</h3>
+  </ion-text>
+  <br>
+  <ion-button routerLink="/test" expand="full" shape="round"><strong>Realizar Test</strong></ion-button>
+</ion-content>

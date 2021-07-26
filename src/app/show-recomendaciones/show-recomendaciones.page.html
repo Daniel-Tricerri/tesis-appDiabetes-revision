@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary"><strong>RECOMENDACIONES</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="peso" color="light">
+    <ion-card-header>
+      <img src="/assets/icon/perderpeso.jpg" alt="imagen sobre buen estilo de vida">
+      <ion-card-title class="ion-align-items-center">Baja de peso</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{nombre}} tu índice de masa corporal es mayor a 24, los efectos de la obesidad en tu salud pronto se pueden manifestar y sería esencial que empezaras a perder peso ya.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="actividad" color="light">
+    <ion-card-header>
+      <img src="/assets/icon/actividad.jpg" alt="imagen sobre actividad fisica">
+      <ion-card-title class="ion-align-items-center">Realiza actividad física</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{nombre}} nos indicaste que {{actividadd}} realizas actividad física. No olvides que el ejercicio físico tiene un efecto beneficioso directo sobre la hipertensión, que además proporciona un beneficio indirecto a través de la pérdida de peso, que también disminuye la tensión. [En tu caso, nos indicaste que {{hipertension}} presentas hipertensión arterial]
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="alimentacion" color="light">
+    <ion-card-header>
+      <img src="/assets/icon/alimentacion.jpg" alt="imagen sobre alimentacion">
+      <ion-card-title class="ion-align-items-center">Cuida tu alimentación</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{nombre}} elimina el consumo excesivo de grasa y azúcar, trata de alimentarte de mejor manera comiendo frutas y vegetales, para aportar una buena cantidad de vitaminas y minerales, además los lácteos, carnes, huevos, y algunos cereales que aportan proteínas y carbohidratos.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <img src="/assets/icon/buenestilodevida.jpg" alt="imagen sobre buen estilo de vida">
+      <ion-card-title class="ion-align-items-center">Mantener una vida saludable</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Manten un peso óptimo, realiza un consumo de grasa inferior al 30% de las calorías diarias, incluye más de 15 gramos de fibra natural por cada mil calorías ingeridas al día, practica actividad física regular durante más de 30 minutos al día, al menos 5 días a la semana. Mantener un estilo de vida saludable reducirá tus posibilidades de contraer una enfermedad coronaria y cardiovascular y nivelará tus niveles de azúcar y colesterol en la sangre. Además, disminuye la aparición de enfermedades crónicas y degenerativas como, cáncer, alzheimer, entre otras.
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

@@ -1,3 +1,45 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="main" swipe-gesture='false'>
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title><strong>Menú</strong></ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="light">
+      <ion-card-header color="light">
+        <ion-text color="black" align="center">
+          <h5><strong>Universidad Técnica de Manabí</strong></h5>
+        </ion-text>
+        <ion-item lines="none" color="light">
+          <ion-label align='center'>
+            <img  src="/assets/icon/Logo_utm.png" width="140px" height="140px">
+          </ion-label>
+        </ion-item>
+        <ion-text color="medium" align="center">
+          <h6>{{usuario.rol}}</h6>
+          <h6>{{usuario.nombre}}</h6>
+          <h6>{{usuario.cedula}}</h6>
+          <h6>{{usuario.correologin}}</h6>
+        </ion-text>
+      </ion-card-header>
+      
+
+      <ion-list color="light" lines="full">
+        <ion-menu-toggle >
+          <ion-item routerLink="/acerca" color="primary"><strong>Acerca de</strong></ion-item>
+          <ion-item button (click)="cerrarSesion()" color="primary"><strong>Cerrar sesión</strong></ion-item>
+        </ion-menu-toggle>
+        
+      </ion-list>
+      
+    </ion-content>
+    <ion-footer align="center">
+      <ion-text color="primary">
+        <h6>UTM &copy; 2021</h6>
+      </ion-text>
+      
+    </ion-footer>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

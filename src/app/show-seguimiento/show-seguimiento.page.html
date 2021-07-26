@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/seguimiento" color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="primary"><strong>SEGUIMIENTO</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+
+  <ion-card color="{{edad}}">
+    <ion-card-header>
+      <ion-card-title>Edad actual</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      - {{respuesta_edad}}.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="{{imc}}">
+    <ion-card-header>
+      <ion-card-title>Indice de masa corporal [IMC]</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      - {{respuesta_imc}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="{{cintura}}">
+    <ion-card-header>
+      <ion-card-title>Perímetro medio</ion-card-title>
+      <ion-card-title>Perímetro de la cintura medido debajo de las costillas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      - {{respuesta_cintura}}.
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card color="{{actividad}}">
+    <ion-card-header>
+      <ion-card-title>Actividad física</ion-card-title>
+      <ion-card-title>¿Realiza usted 30 minutos de actividad física diaria o 4 horas semanales?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      - {{respuesta_actividad}}. 
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="{{alimentacion}}">
+    <ion-card-header>
+      <ion-card-title>Vegetales y frutas</ion-card-title>
+      <ion-card-title>¿Con cuánta frecuencia come usted vegetales o frutas?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      - {{respuesta_alimentacion}}.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="{{hipertenso}}">
+    <ion-card-header>
+      <ion-card-title>Hipertensión</ion-card-title>
+      <ion-card-title>¿Ha tomado medicación para la hipertensión con regularidad?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      - {{respuesta_hipertenso}}.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="{{glucosa}}">
+    <ion-card-header>
+      <ion-card-title>Niveles altos de glucosa</ion-card-title>
+      <ion-card-title>¿Le han encontrado alguna vez niveles altos de glucosa en la sangre?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      - {{respuesta_glucosa}}.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="{{antecedentes}}">
+    <ion-card-header>
+      <ion-card-title>Diabetes en la familia</ion-card-title>
+      <ion-card-title>¿A algún miembro de su familia le han diagnosticado diabetes (tipo 1 o tipo 2)?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      - {{respuesta_antecedentes}}.
+    </ion-card-content>
+  </ion-card>
+ 
+</ion-content>

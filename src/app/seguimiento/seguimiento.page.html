@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first" color="primary"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title color="primary"><strong>SEGUIMIENTO</strong></ion-title>
+
+  
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-fab vertical="top" horizontal="end" edge slot="fixed" >
+    <ion-fab-button color="light" (click)="refresh()">
+      <ion-icon name="refresh-circle" color="success" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-label>
+    
+    <ion-text color="success" align="center">
+      <h6><strong>Toca el botón verde para actualizar</strong></h6>
+      
+    </ion-text>
+    
+  </ion-label>
+  <ion-icon name="eye-outline" color="dark"></ion-icon>
+  
+
+  <ion-list lines="full" mode="ios">
+
+    <ion-list>
+        <ion-item-sliding *ngFor="let element of dataArray">
+            
+            <ion-item-options side="end">
+                <ion-item-option (click)="ver(element)" color="light">
+                    <ion-icon slot="icon-only" name="eye-outline" color="primary"></ion-icon>
+                </ion-item-option>
+            </ion-item-options>
+            <ion-item >
+                <ion-label color="primary">
+                    <h1>Test finalizado</h1>
+                    <p>Fecha: {{element[2]}}</p>
+                    <p>Resultado de test: {{element[1]}}</p>
+        
+                </ion-label>
+                <ion-label class="ion-text-end text-small" > 
+                  <p><strong>←</strong> Deslice para ver<br>más detalles</p> 
+                </ion-label>
+            </ion-item>
+        </ion-item-sliding>
+    </ion-list>
+
+  </ion-list>
+ 
+</ion-content>

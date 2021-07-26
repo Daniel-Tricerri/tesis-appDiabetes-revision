@@ -1,20 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
+  <ion-item lines="none">
+    <ion-label align='center'>
+      <img  src="/assets/icon/Logo_utm.png" width="90px" height="90px">
+    </ion-label>
+  </ion-item>
+  <br><br>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item lines="none">
+    <ion-text align="center">
+      <h1 ><strong>Sistema de Registro para la Detección Temprana de Diabetes</strong></h1>
+    </ion-text>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item lines="none">
+    <ion-label align="center">
+      <ion-icon slot="icon-only" name="reader-outline" style="zoom:5.0;"></ion-icon>
+    </ion-label>
+  </ion-item>
+  <br>
+  <form #formulario="ngForm" (ngSubmit)="onLogin(formulario)">
+
+    <ion-item>
+      <ion-label><strong>Usuario: </strong></ion-label>
+      <ion-input type="email" 
+                  placeholder="Ingrese su correo" 
+                  name="email" 
+                  [(ngModel)]="usuario.email" 
+                  required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><strong>Contraseña: </strong></ion-label>
+      <ion-input type="password"
+                  name="password" 
+                  [(ngModel)]="usuario.password" 
+                  required 
+                  placeholder="Ingrese su contraseña"></ion-input>
+    </ion-item>
+    <br><br>
+    <ion-button (onclick)="onLogin()" [disabled]="formulario.invalid" type='submit' expand="full" shape="round" color="success">
+      Iniciar sesión
+    </ion-button>
+  </form>
 </ion-content>
